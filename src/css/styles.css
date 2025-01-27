@@ -1,4 +1,4 @@
-body{
+body {
     font-family: 'Yugioh';
     background-image: url('../img/fundo-site.jpg');
     background-repeat: no-repeat;
@@ -9,38 +9,48 @@ body{
     min-height: 100vh;
     gap: 30px;
 }
-.cabecalho{
+
+.cabecalho {
     display: flex;
     justify-content: center;
 }
-.cabecalho .titulo{
+
+.cabecalho .titulo {
     color: #f1ecff;
 }
-.slider{
+
+.slider {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 130px;
 }
-.cartao{
+
+.cartao {
     opacity: 0;
     display: flex;
     flex-direction: column;
     padding: 12px;
     gap: 5px;
     position: absolute;
+    border-radius: 10px;
+    cursor: pointer;
 }
-.cartao.selecionado{
+
+.cartao.selecionado {
     opacity: 1;
     z-index: 1;
 }
-.lista-personagens{
+
+.lista-personagens {
     width: 300px;
     height: 500px;
     border-radius: 10px;
     position: relative;
+    padding: 12px;
 }
-.cartao .nome{
+
+.cartao .nome {
     font-size: 13px;
     padding: 5px;
     border-radius: 5px;
@@ -50,7 +60,8 @@ body{
     background: radial-gradient(circle, #f3e2c8, #e4cfa5, #c4a57a);
     border: 2px solid #a67c52;
 }
-.cartao .estrela{
+
+.cartao .estrela {
     width: 20px;
     height: 20px;
     background-image: url('../img/nivel-carta.png');
@@ -58,17 +69,20 @@ body{
     background-repeat: no-repeat;
     display: inline-block;
 }
-.cartao .nivel-carta{
+
+.cartao .nivel-carta {
     display: flex;
     justify-content: flex-end;
     margin-right: 10px;
     gap: 5px;
 }
-.cartao .imagem-carta{
+
+.cartao .imagem-carta {
     max-width: 260px;
     align-self: center;
 }
-.cartao .informacoes{
+
+.cartao .informacoes {
     border-radius: 5px;
     max-width: 300px;
     color: #000;
@@ -78,44 +92,55 @@ body{
     line-height: 1.5;
     padding: 5px;
 }
-.cartao .informacoes .descricao{
+
+.cartao .informacoes .descricao {
     font-size: 13px;
     padding: 10px;
     max-height: 95px;
     overflow-y: scroll;
     border-bottom: 1px solid #000;
 }
-.cartao .informacoes .informacoes-ataque{
+
+.cartao .informacoes .informacoes-ataque {
     display: flex;
     justify-content: end;
     gap: 5px;
     padding: 10px;
 }
-.cartao .informacoes.informacoes-ataque span{
+
+.cartao .informacoes.informacoes-ataque span {
     font-size: 13px;
 }
-.fundo-1{
+
+.fundo-1 {
     background: url('../img/fundo-1.jpg') no-repeat;
 }
-.fundo-2{
+
+.fundo-2 {
     background: url('../img/fundo-2.jpg') no-repeat;
 }
-.fundo-3{
+
+.fundo-3 {
     background: url('../img/fundo-3.jpg') no-repeat;
 }
-.fundo-4{
+
+.fundo-4 {
     background: url('../img/fundo-4.jpg') no-repeat;
 }
-.fundo-5{
+
+.fundo-5 {
     background: url('../img/fundo-5.jpg') no-repeat;
 }
-.fundo-6{
+
+.fundo-6 {
     background: url('../img/fundo-6.jpg') no-repeat;
 }
-.fundo-7{
+
+.fundo-7 {
     background: url('../img/fundo-7.jpg') no-repeat;
 }
-.btn-seta{
+
+.btn-seta {
     background-color: #fff;
     width: 70px;
     height: 70px;
@@ -128,14 +153,16 @@ body{
     transition: background-color .2s ease-in-out;
     box-shadow: rgba(100, 100, 111, .2) 0px 7px 29px 0px;
 }
-.btn-seta.btn-voltar{
+
+.btn-seta.btn-voltar {
     transform: rotateY(180deg);
 }
-.btn-seta:hover{
+
+.btn-seta:hover {
     background-color: #f3e2c8;
 }
 
-body::-webkit-scrollbar-track{
+body::-webkit-scrollbar-track {
     background-color: #c08057;
 }
 
@@ -150,4 +177,31 @@ body::-webkit-scrollbar-track{
 
 ::-webkit-scrollbar-thumb:hover {
     background: #c08057;
+}
+
+.carta-virada {
+    display: none;
+}
+
+.cartao.virar {
+    transform: rotateZ(90deg);
+    transition: transform .3s ease-in-out;
+}
+.carta-virada.mostrar-fundo-carta {
+    background: url('../img/fundo-carta.jpg');
+    background-size: cover;
+    border-radius: 10px;
+    z-index: 2;
+    background-position: center;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+
+.esconder {
+    display: none;
 }
